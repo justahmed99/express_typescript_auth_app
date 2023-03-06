@@ -6,7 +6,7 @@ services:
     restart: always
     environment:
       - POSTGRES_USER=warehouse
-      - POSTGRES_PASSWORD=sip4lingR4hasia
+      - POSTGRES_PASSWORD=[your_password]
     volumes:
       - postgres:/var/lib/postgresql/data
     ports:
