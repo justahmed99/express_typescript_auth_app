@@ -1,0 +1,15 @@
+version: '3'
+services:
+  postgres:
+    container_name: 'warehouse-postgres'
+    image: postgres
+    restart: always
+    environment:
+      - POSTGRES_USER=warehouse
+      - POSTGRES_PASSWORD=sip4lingR4hasia
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    ports:
+      - '2345:5432'
+volumes:
+  postgres:
