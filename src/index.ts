@@ -1,11 +1,10 @@
 import express, { Express, Request, Response } from "express";
-import dotenv from "dotenv";
 import bodyParser from "body-parser";
 import { register, login, activateUser } from "./controller/userController";
+import { PORT } from "./config";
 
-dotenv.config();
 const app: Express = express();
-const port = process.env.PORT;
+const port = PORT;
 app.use(bodyParser.json());
 
 
