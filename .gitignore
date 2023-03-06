@@ -1,4 +1,9 @@
+# build
 dist/**
 node_modules/**
+
+# env
 .env
-migrations/**
+
+# prisma
+migrations/
