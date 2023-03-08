@@ -2,6 +2,7 @@ import { PrismaClient } from '@prisma/client';
 import { pbkdf2Sync, randomUUID } from 'crypto';
 import { OTP_LENGTH, PASSWORD_DIGEST, PASSWORD_ITERATION, PASSWORD_KEY_LENGTH, PASSWORD_SALT } from '../../src/config';
 
+
 const prisma = new PrismaClient();
 
 const salt = PASSWORD_SALT || ''

@@ -9,5 +9,6 @@ export const {
     PASSWORD_DIGEST,
     PASSWORD_KEY_LENGTH,
     PASSWORD_ITERATION,
-    OTP_LENGTH
+    OTP_LENGTH,
+    JWT_SECRET_KEY
 } = process.env;

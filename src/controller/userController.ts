@@ -1,3 +1,4 @@
+import { generateToken } from './../service/jwtService';
 import { findUserByEmailOrUsername, createNewUser, findNonActiveUserByEmailOrUsername, findActiveUserByEmailOrUsername, getActivationCode, markUsedOTP, verifyPassword } from './../repository/userRepository';
 import { Request, Response } from 'express';
 
@@ -67,5 +68,10 @@ export const login = async (req: Request, res: Response) => {
         return res.status(401).json({ "message": "Invalid email / username or password" });
     }
 
-    res.status(200).json({ "message": "Login successful" });
+    const token = generateToken(user.username, user.email, user.name)
+
+    res.status(200).json({
+        "message": "Login successful",
+        "access_token": token
+    });
 }

@@ -8,6 +8,7 @@
 - TypeScript (v4.9.5)
 - Prisma (v4.11.0)
 - Express (v4.18.2)
+- jsonwebtoken (v9.0.0)
 
 ## Initial Setup
 
@@ -23,11 +24,15 @@ PASSWORD_DIGEST="sha512"
 PASSWORD_KEY_LENGTH=64
 PASSWORD_ITERATION=1000
 
+JWT_SECRET_KEY="input_your_jwt_secret_here"
+
 OTP_LENGTH=8
 ```
 You must set `user`, `password`, `dbhost`, and `port` for database connection.
 
-Also you can costumize `PASSWORD_SALT`, `PASSWORD_DIGEST`, `PASSWORD_KEY_LENGTH`, and `PASSWORD_ITERATION` if necessary.
+You can costumize `PASSWORD_SALT`, `PASSWORD_DIGEST`, `PASSWORD_KEY_LENGTH`, and `PASSWORD_ITERATION` if necessary.
+
+Also, don't forget to set `JWT_SECRET_KEY`.
 
 For the database, you can use your existing database (if you already have) or make it using the `docker-compose.yml` file with `docker-compose build up -d` command.
 ```yml
